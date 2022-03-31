@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-type Human struct {
+type human struct {
 	firstName string
 	lastName  string
 	thirdName string
@@ -11,19 +11,19 @@ type Human struct {
 	weight    int
 }
 
-func (h *Human) GetFullName() string {
+func (h *human) GetFullName() string {
 	return h.lastName + " " + h.firstName + " " + h.thirdName
 }
 
-type Action struct {
+type action struct {
+	human
 	name string
-	Human
 }
 
 func main() {
-	action := Action{
+	action := action{
 		name: "test-1",
-		Human: Human{
+		human: human{
 			firstName: "Dmitry",
 			lastName:  "Kobzev",
 			thirdName: "Igorevich",
