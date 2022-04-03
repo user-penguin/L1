@@ -6,18 +6,18 @@ import (
 )
 
 func main() {
-	N := 3
+	limit := time.Second * 2
 	// with range
-	start := time.Now().Unix()
+	start := time.Now()
 	ch := make(chan string)
 	go func() {
 		for data := range ch {
 			fmt.Printf("%s\n", data)
 		}
 	}()
-	for time.Now().Unix()-start < int64(N) {
+	for time.Since(start) < limit {
 		ch <- "12"
-		time.Sleep(time.Millisecond * 100)
+		time.Sleep(time.Second)
 	}
 }
 
