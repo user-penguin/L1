@@ -1,7 +1,9 @@
 package main
 
 import (
+	"L1/p13"
 	"L1/p8"
+	"L1/p9"
 	"bufio"
 	"fmt"
 	"os"
@@ -28,6 +30,10 @@ func runTask(number int64) {
 	switch number {
 	case 8:
 		p8.Run()
+	case 9:
+		p9.Run()
+	case 13:
+		p13.Run()
 	default:
 		fmt.Printf("Такая задача пока не оформлена\n")
 	}
