@@ -2,6 +2,7 @@ package main
 
 import (
 	"L1/p13"
+	"L1/p5"
 	"L1/p8"
 	"L1/p9"
 	"bufio"
@@ -28,6 +29,8 @@ func main() {
 
 func runTask(number int64) {
 	switch number {
+	case 5:
+		p5.Run()
 	case 8:
 		p8.Run()
 	case 9:
