@@ -24,8 +24,6 @@ func quickSort(source []int) []int {
 	pivotIndex := rand.Uint64() % uint64(len(source))
 	// меняем элемент с нашим случайным индексом и крайний правый местами
 	source[pivotIndex], source[right] = source[right], source[pivotIndex]
-
-	// Pile elements smaller than the pivot on the left
 	// отбрасываем элементы, меньшие опорного, левее
 	for i := range source {
 		if source[i] < source[right] {
@@ -35,7 +33,6 @@ func quickSort(source []int) []int {
 	}
 	// опорник ставим сразу после последнего элемента, который оказался меньше опорного
 	source[left], source[right] = source[right], source[left]
-	// повторяем алгоритм в каждой половине
 	quickSort(source[:left])
 	quickSort(source[left+1:])
 	return source
