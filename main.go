@@ -2,6 +2,7 @@ package main
 
 import (
 	"L1/p1"
+	"L1/p10"
 	"L1/p13"
 	"L1/p2"
 	"L1/p3"
@@ -47,6 +48,8 @@ func runTask(number int64) {
 		p8.Run()
 	case 9:
 		p9.Run()
+	case 10:
+		p10.Run()
 	case 13:
 		p13.Run()
 	default:
