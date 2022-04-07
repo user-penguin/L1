@@ -15,6 +15,7 @@ import (
 	"L1/p2"
 	"L1/p20"
 	"L1/p23"
+	"L1/p24"
 	"L1/p3"
 	"L1/p5"
 	"L1/p6"
@@ -82,6 +83,8 @@ func runTask(number int64) {
 		p20.Run()
 	case 23:
 		p23.Run()
+	case 24:
+		p24.Run()
 
 	default:
 		fmt.Printf("Такая задача пока не оформлена\n")
