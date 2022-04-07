@@ -1,4 +1,8 @@
-package main
+/*Package p1
+Дана структура Human (с произвольным набором полей и методов).
+Реализовать встраивание методов в структуре Action от родительской структуры Human (аналог наследования).
+*/
+package p1
 
 import "fmt"
 
@@ -20,7 +24,7 @@ type action struct {
 	name string
 }
 
-func main() {
+func Run() {
 	action := action{
 		name: "test-1",
 		human: human{
