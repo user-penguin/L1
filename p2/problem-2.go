@@ -1,11 +1,15 @@
-package main
+/*Package p2
+Написать программу, которая конкурентно рассчитает значение квадратов чисел
+взятых из массива (2,4,6,8,10) и выведет их квадраты в stdout.
+*/
+package p2
 
 import (
 	"fmt"
 	"sync"
 )
 
-func main() {
+func Run() {
 	numbers := []int{2, 4, 6, 8, 10}
 	wg := new(sync.WaitGroup)
 	for _, num := range numbers {
