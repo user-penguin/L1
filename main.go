@@ -7,6 +7,7 @@ import (
 	"L1/p12"
 	"L1/p13"
 	"L1/p14"
+	"L1/p15"
 	"L1/p16"
 	"L1/p2"
 	"L1/p3"
@@ -62,6 +63,8 @@ func runTask(number int64) {
 		p13.Run()
 	case 14:
 		p14.Run()
+	case 15:
+		p15.Run()
 	case 16:
 		p16.Run()
 	default:
