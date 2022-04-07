@@ -1,11 +1,15 @@
-package main
+/*Package p3
+Дана последовательность чисел: 2,4,6,8,10.
+Найти сумму их квадратов(2^2+3^2+4^2….) с использованием конкурентных вычислений.
+*/
+package p3
 
 import (
 	"fmt"
 	"sync"
 )
 
-func main() {
+func Run() {
 	nums := []int{2, 4, 6, 8, 10}
 	wg := new(sync.WaitGroup)
 	mu := new(sync.Mutex)
