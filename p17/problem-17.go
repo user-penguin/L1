@@ -1,8 +1,8 @@
-/*
+/*Package p17
 Реализовать бинарный поиск встроенными методами языка
 */
-package main
+package p17
 
-func main() {
+func Run() {
 
 }
