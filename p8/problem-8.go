@@ -40,21 +40,13 @@ func Run() {
 
 func changeBit(src int64, position int64, value int64) int64 {
 	tmp := uint64(src)
-	mask := uint64(pow2(position))
+	mask := uint64(1 << position)
 	switch value {
 	case 0:
 		return int64(tmp &^ mask)
 	default:
 		return int64(tmp | mask)
 	}
-}
-
-func pow2(value int64) int64 {
-	var res, i int64 = 1, 0
-	for i = 0; i < value; i++ {
-		res *= 2
-	}
-	return res
 }
 
 func readInt(msg string) (int64, error) {
