@@ -15,6 +15,25 @@ func main() {
 */
 package p15
 
-func Run() {
+import "fmt"
 
+var justString string
+
+func someFunc() {
+	v := createHugeString(1 << 10) //1024
+	justString = v[:100]
+}
+
+func createHugeString(size int) string {
+	fmt.Println(size)
+	res := ""
+	for i := 0; i < size; i++ {
+		res += "a"
+	}
+	return res
+}
+
+func Run() {
+	someFunc()
+	println(justString)
 }
