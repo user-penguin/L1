@@ -62,6 +62,8 @@ func interruptControl(c *control) {
 			fmt.Printf("Get ^C\n")
 			c.stop <- 0
 			close(c.stop)
+			close(c.sig)
+			return
 		default:
 			fmt.Printf("Unknown signal\n")
 		}
