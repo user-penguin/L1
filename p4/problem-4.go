@@ -1,4 +1,4 @@
-/*
+/*Package p4
 Задача 4.
 Реализовать постоянную запись данных в канал (главный поток).
 Реализовать набор из N воркеров, которые читают произвольные данные из канала и выводят в stdout.
@@ -7,7 +7,7 @@
 Программа должна завершаться по нажатию Ctrl+C.
 Выбрать и обосновать способ завершения работы всех воркеров.
 */
-package main
+package p4
 
 import (
 	"fmt"
@@ -18,7 +18,7 @@ import (
 	"syscall"
 )
 
-func main() {
+func Run() {
 	workerPoolSize := 10
 	sigCh := make(chan os.Signal, 1)
 	signal.Notify(sigCh, syscall.SIGINT)
@@ -66,13 +66,15 @@ func fillChannel(dataChan chan string) {
 	close(dataChan)
 }
 
-const alf = "qwertyuiopasdfghjklzxcvbnm1234567890"
-
+//generateData - генерация случайной строки случайной длины
 func generateData() string {
-	length := rand.Int63()%100 + 1 //случайная длина сообщения от 1 до 100
-	bytes := make([]byte, length)  // массив байт под возвращаемое слово
-	for i := range bytes {
-		bytes[i] = alf[rand.Int63()%int64(len(alf))]
+	//случайная длина строки
+	sizeMin, sizeMax := 2, 200
+	size := rand.Intn(sizeMax-sizeMin) + sizeMin
+	//массив байтов под результат
+	res := make([]byte, size)
+	for n := range res {
+		res[n] = byte(rand.Intn('z'-'0') + '0')
 	}
-	return string(bytes)
+	return string(res)
 }
